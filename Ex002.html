@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: grey;
+        }
+        #mensagem {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 300px;
+            background-color: #333;
+            color: white
+        }
+        button {
+            padding: 8px;
+            font-size: 18px;
+            width: 150px;
+            background-color: #333;
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Lista</h1>
+
+    <input type="number" id="numero" placeholder="Digite a quantidade de itens">
+    <button onclick="exibirTexto()">Gerar Lista</button>
+    <p id="mensagem"></p>
+
+    <script>
+        function exibirTexto() 
+        {
+            let numero = document.getElementById("numero").value;
+
+            if(numero <= 0 || numero == null)
+            {
+                document.getElementById("mensagem").innerHTML = "• Por favor, insira um número válido.";
+            }
+            else
+            {
+                document.getElementById("mensagem").innerHTML = "";
+                for (let c=0; c<numero; c++)
+                {
+                    document.getElementById("mensagem").innerHTML += "• João Pedro " + (c+1) + "<br>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
